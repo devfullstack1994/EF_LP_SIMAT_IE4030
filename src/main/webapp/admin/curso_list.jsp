@@ -23,6 +23,7 @@
 <body>
 
 <div class="container">
+
   <div class="topbar">
     <div class="brand">
       <div class="logo"></div>
@@ -37,6 +38,7 @@
       <a class="danger" href="<%=request.getContextPath()%>/logout">Salir</a>
     </div>
   </div>
+
   <div class="card">
     <h2 class="title">Mantenimiento de Cursos</h2>
 
