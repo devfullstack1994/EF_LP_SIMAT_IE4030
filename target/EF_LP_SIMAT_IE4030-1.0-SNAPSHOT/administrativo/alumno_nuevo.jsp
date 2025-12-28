@@ -3,6 +3,13 @@
 <%
   Usuario u = (Usuario) session.getAttribute("usuario");
   String msg = request.getParameter("msg");
+  String volver = "/administrativo/dashboard.jsp";
+  String crear = "/administrativo/alumnos/crear";
+
+  if (u != null && "ADMIN".equals(u.getRol())) {
+    volver = "/admin/dashboard.jsp";
+    crear = "/admin/alumnos/crear";
+  }
 %>
 <!DOCTYPE html>
 <html>
@@ -23,7 +30,7 @@
       </div>
     </div>
     <div class="nav">
-      <a class="ghost" href="<%=request.getContextPath()%>/administrativo/dashboard.jsp">⬅ Volver</a>
+      <a class="ghost" href="<%=request.getContextPath()%><%=volver%>">⬅ Volver</a>
       <a class="danger" href="<%=request.getContextPath()%>/logout">Salir</a>
     </div>
   </div>
@@ -40,7 +47,7 @@
       <div class="alert info">Completa al menos DNI, Apellidos y Nombres.</div>
     <% } %>
 
-    <form class="form" method="post" action="<%=request.getContextPath()%>/administrativo/alumnos/crear">
+    <form class="form" method="post" action="<%=request.getContextPath()%><%=crear%>">
       <div>
         <label class="label">DNI</label>
         <input class="input" type="text" name="dni" maxlength="12" required/>
@@ -66,7 +73,7 @@
 
       <div class="row">
         <button class="btn primary" type="submit">Guardar</button>
-        <a class="btn ghost" href="<%=request.getContextPath()%>/administrativo/dashboard.jsp">Cancelar</a>
+        <a class="btn ghost" href="<%=request.getContextPath()%><%=volver%>">Cancelar</a>
       </div>
     </form>
 

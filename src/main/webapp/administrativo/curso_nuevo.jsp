@@ -49,7 +49,7 @@
     <% } %>
 
     <form class="form" method="post"
-          action="<%=request.getContextPath()%>/admin/cursos/crear">
+          action="<%=request.getContextPath()%><%=crear%>">
 
       <div>
         <label class="label">Código</label>
