@@ -4,7 +4,6 @@
 <%
   Usuario u = (Usuario) session.getAttribute("usuario");
   String msg = request.getParameter("msg");
-  List<Curso> docentes = (List<Curso>) request.getAttribute("cursos");
 
   String back = "/admin/dashboard.jsp";
   String nuevo = "/admin/cursos/nuevo";
