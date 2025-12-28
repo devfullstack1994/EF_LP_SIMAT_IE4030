@@ -1,7 +1,18 @@
 <%@page contentType="text/html; charset=UTF-8"%>
 <%@page import="java.util.List"%>
 <%@page import="com.mycompany.ef_lp_simat_ie4030.model.Curso"%>
+<%
+  Usuario u = (Usuario) session.getAttribute("usuario");
+  String msg = request.getParameter("msg");
+  List<Curso> docentes = (List<Curso>) request.getAttribute("cursos");
 
+  String back = "/admin/dashboard.jsp";
+  String nuevo = "/admin/cursos/nuevo";
+  if (u != null && "ADMINISTRATIVO".equals(u.getRol())) {
+    back = "/administrativo/dashboard.jsp";
+    nuevo = "/administrativo/cursos/nuevo";
+  }
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +23,20 @@
 <body>
 
 <div class="container">
-
+  <div class="topbar">
+    <div class="brand">
+      <div class="logo"></div>
+      <div>
+        <h1>SIMAT IE4030</h1>
+        <small>Panel • <span class="badge"><%=u!=null?u.getRol():""%></span></small>
+      </div>
+    </div>
+    <div class="nav">
+      <a class="ghost" href="<%=request.getContextPath()%><%=back%>">⬅ Volver</a>
+      <a class="primary" href="<%=request.getContextPath()%><%=nuevo%>">➕ Nuevo Curso</a>
+      <a class="danger" href="<%=request.getContextPath()%>/logout">Salir</a>
+    </div>
+  </div>
   <div class="card">
     <h2 class="title">Mantenimiento de Cursos</h2>
 
