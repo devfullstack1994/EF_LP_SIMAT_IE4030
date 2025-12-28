@@ -1,6 +1,7 @@
 <%@page contentType="text/html; charset=UTF-8"%>
 <%@page import="java.util.List"%>
 <%@page import="com.mycompany.ef_lp_simat_ie4030.model.Curso"%>
+<%@page import="com.mycompany.ef_lp_simat_ie4030.model.Usuario"%>
 <%
   Usuario u = (Usuario) session.getAttribute("usuario");
   String msg = request.getParameter("msg");
