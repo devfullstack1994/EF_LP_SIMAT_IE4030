@@ -16,7 +16,7 @@
   <div class="card">
     <h2 class="title">Mantenimiento de Cursos</h2>
 
-    <a class="btn primary" href="<%=request.getContextPath()%>/administrativo/cursos/nuevo">
+    <a class="btn primary" href="<%=request.getContextPath()%>/admin/cursos/nuevo">
       ➕ Nuevo Curso
     </a>
 
